@@ -44,7 +44,7 @@
 					antialias		: true,	// to get smoother output
 					preserveDrawingBuffer	: true	// to allow screenshot
 				});
-				renderer.setClearColorHex( 0xBBBBBB, 1 );
+				renderer.setClearColorHex( 0xCEE3F6, 1 );
 			// uncomment if webgl is required
 			//}else{
 			//	Detector.addGetWebGLMessage();
@@ -74,6 +74,10 @@
 
 			// create a camera contol
 			cameraControls	= new THREEx.DragPanControls(camera)
+
+			//agrego ejes temporales
+			var axes = new THREE.AxisHelper( 20 );
+        	scene.add(axes);
 
 			planeWidth=70;
 	        planeHeight=60;
@@ -177,9 +181,9 @@
 			new THREE.JSONLoader().load('teapot.js', function(geometry) { 
 		    	var material	= new THREE.MeshLambertMaterial({color: 0x660066}); 
 		    	var mesh	= new THREE.Mesh( geometry, material ); 
-		    	mesh.position.x= -5;
-		    	mesh.position.y=10;
-		    	mesh.position.z=10;
+		    	mesh.position.x= 0;
+		    	mesh.position.y=4;
+		    	mesh.position.z=0;
 		    	mesh.scale.set(2,2,2);
 		    	scene.add( mesh ); 
 		    	teapot = mesh; 
