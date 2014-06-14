@@ -187,8 +187,24 @@
 
 			//scene.add( mesh );
 			// add spotlight for the shadows
+			//window.innerWidth / window.innerHeight
 	        var spotLight = new THREE.SpotLight( 0xffffff );
-	        spotLight.position.set( -40, 60, -10 );
+	        spotLight.position.set( -window.innerWidth/2, window.innerHeight/2,20 );
+	        spotLight.castShadow = true;
+	        scene.add( spotLight );
+
+	        var spotLight = new THREE.SpotLight( 0xffffff );
+	        spotLight.position.set( -window.innerWidth/2, -window.innerHeight/2,20 );
+	        spotLight.castShadow = true;
+	        scene.add( spotLight );
+
+	        var spotLight = new THREE.SpotLight( 0xffffff );
+	        spotLight.position.set( window.innerWidth/2, window.innerHeight/2,20 );
+	        spotLight.castShadow = true;
+	        scene.add( spotLight );
+
+	        var spotLight = new THREE.SpotLight( 0xffffff );
+	        spotLight.position.set( window.innerWidth/2, -window.innerHeight/2,20 );
 	        spotLight.castShadow = true;
 	        scene.add( spotLight );
 
